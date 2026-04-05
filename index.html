@@ -35,7 +35,7 @@ body {
   cursor: none;
 }
 
-/* ===== CUSTOM CURSOR ===== */
+/* ===== CUSTOM CURSOR 
 #cursor {
   width: 10px; height: 10px;
   background: var(--gold);
@@ -55,7 +55,31 @@ body {
   transition: transform 0.18s ease, opacity 0.2s ease;
   opacity: 0.6;
 }
-body:hover #cursor { opacity: 1; }
+body:hover #cursor { opacity: 1; } ===== */
+
+  /* ===== CUSTOM CURSOR ===== */
+
+  .custom-cursor {
+    width: 12px; height: 12px;
+    background: var(--gold);
+    border-radius: 50%;
+    position: fixed; top: 0; left: 0;
+    pointer-events: none;
+    z-index: 999999;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: difference;
+    transition: transform 0.15s ease;
+  }
+  .custom-cursor-follower {
+    width: 36px; height: 36px;
+    border: 1.5px solid rgba(139, 92, 246, 0.5);
+    border-radius: 50%;
+    position: fixed; top: 0; left: 0;
+    pointer-events: none;
+    z-index: 999998;
+    transform: translate(-50%, -50%);
+    transition: all 0.35s cubic-bezier(.23,1,.32,1);
+  }
 
 /* ===== SCROLLBAR ===== */
 ::-webkit-scrollbar { width: 4px; }
