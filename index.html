@@ -1467,17 +1467,203 @@ footer {
 </footer>
 
 <script>
-// Cursor
-const cursor = document.getElementById('cursor');
-const ring = document.getElementById('cursor-ring');
-let mx = 0, my = 0, rx = 0, ry = 0;
-document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; cursor.style.left = mx+'px'; cursor.style.top = my+'px'; });
-function animateRing() { rx += (mx - rx) * 0.12; ry += (my - ry) * 0.12; ring.style.left = rx+'px'; ring.style.top = ry+'px'; requestAnimationFrame(animateRing); }
-animateRing();
-document.querySelectorAll('a,button,input,select,label,.service-card,.industry-card,.process-step').forEach(el => {
-  el.addEventListener('mouseenter', () => { cursor.style.width='18px'; cursor.style.height='18px'; ring.style.opacity='0'; });
-  el.addEventListener('mouseleave', () => { cursor.style.width='10px'; cursor.style.height='10px'; ring.style.opacity='0.6'; });
+    <div class="social-links">
+      
+      <!-- Facebook -->
+      <a href="https://www.facebook.com/tendoon.official" target="_blank" rel="noopener" title="Facebook">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      </a>
+      
+      <!-- Instagram -->
+      <a href="https://www.instagram.com/tendoon.official" target="_blank" rel="noopener" title="Instagram">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      </a>
+      
+      <!-- LinkedIn -->
+      <a href="https://www.linkedin.com/company/tendoonofficial" target="_blank" rel="noopener" title="LinkedIn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+      
+      <!-- Twitter / X -->
+      <a href="https://www.twitter.com/tendoonofficial" target="_blank" rel="noopener" title="Twitter / X">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      
+      <!-- Threads -->
+      <a href="https://www.threads.net/@tendoon.official" target="_blank" rel="noopener" title="Threads">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.5 12.068c0-3.73.927-6.722 2.754-8.9C6.063 1.05 8.748 0 12.186 0c2.951 0 5.386.816 7.24 2.426 1.837 1.596 2.866 3.799 3.059 6.549l-2.502.167c-.158-2.173-.945-3.903-2.339-5.14C16.27 2.79 14.381 2.09 12.186 2.09c-2.867 0-5.062.868-6.523 2.58C4.212 6.36 3.59 8.873 3.59 12.068c0 3.04.619 5.464 1.84 7.005 1.235 1.56 3.197 2.346 5.833 2.346h.007c2.379-.016 4.09-.625 5.088-1.811.898-1.065 1.354-2.669 1.354-4.765 0-.22-.009-.436-.026-.645-.505.256-1.059.46-1.65.601-.765.186-1.564.278-2.369.272-1.844-.013-3.353-.537-4.484-1.558-1.147-1.035-1.73-2.466-1.73-4.25 0-1.885.63-3.395 1.876-4.487C10.38 3.84 12.025 3.294 14 3.294c1.518 0 2.8.377 3.809 1.12.997.735 1.648 1.768 1.936 3.07l-2.434.553c-.183-.849-.558-1.5-1.115-1.936-.547-.43-1.286-.648-2.196-.648-1.32 0-2.316.376-2.96 1.119-.626.723-.943 1.742-.943 3.027 0 1.183.346 2.121 1.028 2.79.672.657 1.61.99 2.793.998.617.004 1.22-.073 1.792-.226.7-.188 1.32-.487 1.845-.885-.101-.803-.342-1.437-.718-1.887-.41-.49-1.006-.74-1.772-.742h-.033c-.651 0-1.148.175-1.478.521-.306.319-.461.757-.461 1.302h-2.5c0-1.147.38-2.089 1.128-2.8.762-.723 1.814-1.09 3.127-1.09h.046c1.411.009 2.563.458 3.426 1.333.893.907 1.361 2.238 1.39 3.956.005.285.008.574.008.866 0 2.648-.625 4.699-1.857 6.095-1.268 1.437-3.34 2.178-6.16 2.197z"/></svg>
+      </a>
+      
+      <!-- WhatsApp -->
+      <a href="https://wa.me/919004230084" target="_blank" rel="noopener" title="WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  
+</b:section>
+
+<!-- ✅ JS (SAFE FORMAT) -->
+<script type='text/javascript'>
+  <script>
+//<![CDATA[
+ 
+  <script>  
+
+// Hover effect on interactive elements
+  document.querySelectorAll('a, button, .service-item, .industry-card').forEach(el => {
+    el.addEventListener('mouseenter', () => ;
+    el.addEventListener('mouseleave', () => {});
+  });
+
+// Fade-in on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.service-item, .industry-card, .testi-card, .pricing-card, .result-card, .ai-feature, .process-step').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+  });
+  
+</script>
+
+<!-- FLOATING WHATSAPP BUTTON -->
+<a href="https://wa.me/919004230084" target="_blank" rel="noopener" class="wa-float" title="Chat on WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+</a>
+
+<style>
+  .wa-float {
+    position: fixed;
+    bottom: 28px; right: 28px;
+    width: 60px; height: 60px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+    z-index: 9000;
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: waPulse 2.5s infinite;
+    cursor: pointer;
+  }
+  .wa-float:hover {
+    transform: scale(1.12);
+    box-shadow: 0 6px 28px rgba(37,211,102,0.65);
+  }
+  @keyframes waPulse {
+    0%,100% { box-shadow: 0 4px 20px rgba(37,211,102,0.45), 0 0 0 0 rgba(37,211,102,0.35); }
+    50%      { box-shadow: 0 4px 20px rgba(37,211,102,0.45), 0 0 0 14px rgba(37,211,102,0); }
+  }
+</style>
+   
+
+<!-- DAY/NIGHT TOGGLE BUTTON -->
+<script>
+  const toggleBtn = document.getElementById("themeToggle");
+
+  toggleBtn.onclick = () => {
+    document.body.classList.toggle("light-mode");
+
+    if(document.body.classList.contains("light-mode")){
+      localStorage.setItem("theme", "light");
+    } else {
+      localStorage.setItem("theme", "dark");
+    }
+  };
+
+// Load saved theme
+  if(localStorage.getItem("theme") === "light"){
+    document.body.classList.add("light-mode");
+  }
+</script>
+
+<script>
+  const sections = document.querySelectorAll("section");
+  const navLinks = document.querySelectorAll("nav ul a");
+
+  window.addEventListener("scroll", () => {
+    let current = "";
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 100;
+    const sectionHeight = section.clientHeight;
+
+    if (scrollY >= sectionTop) {
+      current = section.getAttribute("id");
+  }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove("active");
+
+    if (link.getAttribute("href") === "#" + current) {
+      link.classList.add("active");
+    }
+  });
 });
+</script>
+ 
+<!-- CUSTON CURSOR -->
+<script>
+(function() {
+  
+// Create cursor elements
+  var cursor = document.createElement('div');
+  cursor.className = 'custom-cursor';
+  
+  var follower = document.createElement('div');
+  follower.className = 'custom-cursor-follower';
+  
+  document.body.appendChild(cursor);
+  document.body.appendChild(follower);
+
+  var mouseX = 0, mouseY = 0;
+  var followerX = 0, followerY = 0;
+
+  document.addEventListener('mousemove', function(e) {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    cursor.style.left = mouseX + 'px';
+    cursor.style.top = mouseY + 'px';
+  });
+
+  function animateFollower() {
+    followerX += (mouseX - followerX) * 0.15;
+    followerY += (mouseY - followerY) * 0.15;
+    follower.style.left = followerX + 'px';
+    follower.style.top = followerY + 'px';
+    requestAnimationFrame(animateFollower);
+  }
+  animateFollower();
+
+// Hover effect on links/buttons
+  document.addEventListener('mouseover', function(e) {
+    if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') {
+      cursor.style.transform = 'translate(-50%, -50%) scale(2)';
+      cursor.style.mixBlendMode = 'normal';
+      cursor.style.opacity = '0.7';
+    }
+  });
+
+  document.addEventListener('mouseout', function(e) {
+    if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') {
+      cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+      cursor.style.mixBlendMode = 'difference';
+      cursor.style.opacity = '1';
+    }
+  });
+})();
 
 // Navbar scroll
 const nav = document.getElementById('navbar');
